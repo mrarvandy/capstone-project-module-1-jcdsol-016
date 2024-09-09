@@ -352,7 +352,7 @@ users = [
     {
         'user_id': 26,
         'name': 'Danurwindo',
-        'date_of_birth': '1951-15-05',
+        'date_of_birth': '1951-05-15',
         'domicile_city': 'South Jakarta',
         'domicile_country': 'Indonesia',
         'nationality_country': 'Indonesia',
@@ -954,7 +954,7 @@ users = [
     {
         'user_id': 69,
         'name': 'Nicklas Bendtner',
-        'date_of_birth': '1988-16-10',
+        'date_of_birth': '1988-10-16',
         'domicile_city': 'Copenhagen',
         'domicile_country': 'Denmark',
         'nationality_country': 'Denmark',
