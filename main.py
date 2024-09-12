@@ -259,6 +259,34 @@ def inputValue(inputKey, method):
                 else:
                     inputValue = ''
                     flag = False
+    elif (inputKey in ['phone_number']):
+        flag = True
+        while (bool(flag)):
+            inputValue = input(f'\nChoose selected {method} data value: ')
+            if (inputValue[0] == '+' and bool(inputValue[1:len(inputValue)].isdigit())):
+                flag = False
+            else:
+                print("Invalid input")
+                retypeOption = input("Do you want to retype? (y or else as no): ")
+                if (retypeOption.lower() in ['y', 'yes']):
+                    continue
+                else:
+                    inputValue = ''
+                    flag = False
+    elif (inputKey in ['email']):
+        flag = True
+        while (bool(flag)):
+            inputValue = input(f'\nChoose selected {method} data value: ')
+            if (bool('@' in inputValue)):
+                flag = False
+            else:
+                print("Invalid input")
+                retypeOption = input("Do you want to retype? (y or else as no): ")
+                if (retypeOption.lower() in ['y', 'yes']):
+                    continue
+                else:
+                    inputValue = ''
+                    flag = False
     elif (inputKey in ['brand']):
         flag = True
         while (bool(flag)):

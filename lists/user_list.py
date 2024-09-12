@@ -1336,7 +1336,7 @@ users = [
         'domicile_city': 'Bandung',
         'domicile_country': 'Indonesia',
         'nationality_country': 'Indonesia',
-        'phone_number': '+6285293753821',
+        'phone_number': '+628574323494',
         'email': 'victor.igbonefo@gmail.com',
         'gender': 'M',
         'legal_id_no': '3171011010850001',
