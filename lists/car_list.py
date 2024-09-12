@@ -5,6 +5,7 @@ cars = [
         'brand': 'Toyota',
         'type': 'Avanza',
         'daily_fee': 425000,
+        'isAvailable': True,
         'isDamaged': False
     },
     {
@@ -13,6 +14,7 @@ cars = [
         'brand': 'Toyota',
         'type': 'Avanza',
         'daily_fee': 425000,
+        'isAvailable': True,
         'isDamaged': False
     },
     {
@@ -21,6 +23,7 @@ cars = [
         'brand': 'Toyota',
         'type': 'Avanza',
         'daily_fee': 425000,
+        'isAvailable': True,
         'isDamaged': False
     },
     {
@@ -29,6 +32,7 @@ cars = [
         'brand': 'Daihatsu',
         'type': 'Terios',
         'daily_fee': 425000,
+        'isAvailable': True,
         'isDamaged': False
     },
     {
@@ -37,6 +41,7 @@ cars = [
         'brand': 'Daihatsu',
         'type': 'Terios',
         'daily_fee': 425000,
+        'isAvailable': True,
         'isDamaged': False
     },
     {
@@ -45,6 +50,7 @@ cars = [
         'brand': 'Suzuki',
         'type': 'Ertiga',
         'daily_fee': 425000,
+        'isAvailable': True,
         'isDamaged': False
     },
     {
@@ -53,6 +59,7 @@ cars = [
         'brand': 'Daihatsu',
         'type': 'Xenia',
         'daily_fee': 425000,
+        'isAvailable': True,
         'isDamaged': False
     },
     {
@@ -61,6 +68,7 @@ cars = [
         'brand': 'Daihatsu',
         'type': 'Xenia',
         'daily_fee': 425000,
+        'isAvailable': True,
         'isDamaged': False
     },
     {
@@ -69,6 +77,7 @@ cars = [
         'brand': 'Daihatsu',
         'type': 'Ayla',
         'daily_fee': 400000,
+        'isAvailable': True,
         'isDamaged': False
     },
     {
@@ -77,6 +86,7 @@ cars = [
         'brand': 'Daihatsu',
         'type': 'Ayla',
         'daily_fee': 400000,
+        'isAvailable': True,
         'isDamaged': False
     },
     {
@@ -85,6 +95,7 @@ cars = [
         'brand': 'Daihatsu',
         'type': 'Luxio',
         'daily_fee': 425000,
+        'isAvailable': True,
         'isDamaged': False
     },
     {
@@ -93,6 +104,7 @@ cars = [
         'brand': 'Suzuki',
         'type': 'Ertiga',
         'daily_fee': 425000,
+        'isAvailable': True,
         'isDamaged': False
     },
     {
@@ -101,6 +113,7 @@ cars = [
         'brand': 'Daihatsu',
         'type': 'Luxio',
         'daily_fee': 425000,
+        'isAvailable': True,
         'isDamaged': False
     },
     {
@@ -109,6 +122,7 @@ cars = [
         'brand': 'Nissan',
         'type': 'Grand Livina',
         'daily_fee': 425000,
+        'isAvailable': True,
         'isDamaged': False
     },
     {
@@ -117,6 +131,7 @@ cars = [
         'brand': 'Nissan',
         'type': 'Grand Livina',
         'daily_fee': 425000,
+        'isAvailable': True,
         'isDamaged': False
     },
     {
@@ -125,6 +140,7 @@ cars = [
         'brand': 'Daihatsu',
         'type': 'Terios',
         'daily_fee': 425000,
+        'isAvailable': True,
         'isDamaged': False
     },
     {
@@ -133,6 +149,7 @@ cars = [
         'brand': 'Suzuki',
         'type': 'APV',
         'daily_fee': 425000,
+        'isAvailable': True,
         'isDamaged': False
     },
     {
@@ -141,6 +158,7 @@ cars = [
         'brand': 'Toyota',
         'type': 'Innova',
         'daily_fee': 550000,
+        'isAvailable': True,
         'isDamaged': False
     },
     {
@@ -149,6 +167,7 @@ cars = [
         'brand': 'Toyota',
         'type': 'Innova',
         'daily_fee': 550000,
+        'isAvailable': True,
         'isDamaged': False
     },
     {
@@ -157,6 +176,7 @@ cars = [
         'brand': 'Toyota',
         'type': 'Innova',
         'daily_fee': 550000,
+        'isAvailable': True,
         'isDamaged': False
     },
     {
@@ -165,6 +185,7 @@ cars = [
         'brand': 'Toyota',
         'type': 'Hiace',
         'daily_fee': 1100000,
+        'isAvailable': True,
         'isDamaged': False
     },
     {
@@ -173,6 +194,7 @@ cars = [
         'brand': 'Toyota',
         'type': 'Hiace',
         'daily_fee': 1100000,
+        'isAvailable': True,
         'isDamaged': False
     },
     {
@@ -181,6 +203,7 @@ cars = [
         'brand': 'Toyota',
         'type': 'Hiace',
         'daily_fee': 1100000,
+        'isAvailable': True,
         'isDamaged': False
     },
     {
@@ -189,6 +212,7 @@ cars = [
         'brand': 'Isuzu',
         'type': 'Elf',
         'daily_fee': 900000,
+        'isAvailable': True,
         'isDamaged': False
     },
     {
@@ -197,6 +221,7 @@ cars = [
         'brand': 'Isuzu',
         'type': 'Elf',
         'daily_fee': 900000,
+        'isAvailable': True,
         'isDamaged': False
     },
 ]

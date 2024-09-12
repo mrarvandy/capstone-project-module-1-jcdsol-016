@@ -351,7 +351,7 @@ users = [
     },
     {
         'user_id': 26,
-        'name': 'Danurwindo',
+        'name': 'Muhammad Danurwindo',
         'date_of_birth': '1951-05-15',
         'domicile_city': 'South Jakarta',
         'domicile_country': 'Indonesia',
