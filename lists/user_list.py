@@ -10,6 +10,7 @@ users = [
         'email': 'bernadya.ribka@gmail.com',
         'gender': 'F',
         'legal_id_no': '3174055603040001',
+        'isAvailable': True,
         'isWatchlisted': False,
         'isBlacklisted': False
     },
@@ -24,6 +25,7 @@ users = [
         'email': 'ragnar.oratmangoen@gmail.com',
         'gender': 'M',
         'legal_id_no': '3171012101980001',
+        'isAvailable': True,
         'isWatchlisted': False,
         'isBlacklisted': False
     },
@@ -38,6 +40,7 @@ users = [
         'email': 'aji.santoso@gmail.com',
         'gender': 'M',
         'legal_id_no': '3573030604700001',
+        'isAvailable': True,
         'isWatchlisted': False,
         'isBlacklisted': False
     },
@@ -52,6 +55,7 @@ users = [
         'email': 'yesaya.desnam@gmail.com',
         'gender': 'M',
         'legal_id_no': '9101012506850001',
+        'isAvailable': True,
         'isWatchlisted': False,
         'isBlacklisted': False
     },
@@ -66,6 +70,7 @@ users = [
         'email': 'yanto.basna@gmail.com',
         'gender': 'M',
         'legal_id_no': '9271071206950001',
+        'isAvailable': True,
         'isWatchlisted': False,
         'isBlacklisted': False
     },
@@ -80,6 +85,7 @@ users = [
         'email': 't.a.musafri@gmail.com',
         'gender': 'M',
         'legal_id_no': '8204081902820001',
+        'isAvailable': True,
         'isWatchlisted': False,
         'isBlacklisted': False
     },
@@ -94,6 +100,7 @@ users = [
         'email': 'mukti.entut@gmail.com',
         'gender': 'M',
         'legal_id_no': '3471140704910001',
+        'isAvailable': True,
         'isWatchlisted': False,
         'isBlacklisted': False
     },
@@ -108,6 +115,7 @@ users = [
         'email': 'zahra.muzdalifah@gmail.com',
         'gender': 'F',
         'legal_id_no': '3173084404010001',
+        'isAvailable': True,
         'isWatchlisted': False,
         'isBlacklisted': False
     },
@@ -122,6 +130,7 @@ users = [
         'email': 'noa.leatomu@gmail.com',
         'gender': 'F',
         'legal_id_no': '3171014711030001',
+        'isAvailable': True,
         'isWatchlisted': False,
         'isBlacklisted': False
     },
@@ -136,6 +145,7 @@ users = [
         'email': 'djenna.de.jong@gmail.com',
         'gender': 'F',
         'legal_id_no': '3171015409050001',
+        'isAvailable': True,
         'isWatchlisted': False,
         'isBlacklisted': False
     },
@@ -150,6 +160,7 @@ users = [
         'email': 'talia.grossman@gmail.com',
         'gender': 'F',
         'legal_id_no': '3171014803020001',
+        'isAvailable': True,
         'isWatchlisted': False,
         'isBlacklisted': False
     },
@@ -164,6 +175,7 @@ users = [
         'email': 'safira.ika@gmail.com',
         'gender': 'F',
         'legal_id_no': '3171036104030001',
+        'isAvailable': True,
         'isWatchlisted': False,
         'isBlacklisted': False
     },
@@ -178,6 +190,7 @@ users = [
         'email': 'legimin.raharjo@gmail.com',
         'gender': 'M',
         'legal_id_no': '1271121005820001',
+        'isAvailable': True,
         'isWatchlisted': False,
         'isBlacklisted': False
     },
@@ -192,6 +205,7 @@ users = [
         'email': 'usep.munandar@gmail.com',
         'gender': 'M',
         'legal_id_no': '3273051712810001',
+        'isAvailable': True,
         'isWatchlisted': False,
         'isBlacklisted': False
     },
@@ -206,6 +220,7 @@ users = [
         'email': 'oza.rangkuti@gmail.com',
         'gender': 'M',
         'legal_id_no': '3174020512910001',
+        'isAvailable': True,
         'isWatchlisted': False,
         'isBlacklisted': False
     },
@@ -220,6 +235,7 @@ users = [
         'email': 'rita.ratu.tawon@gmail.com',
         'gender': 'F',
         'legal_id_no': '3403086503900001',
+        'isAvailable': True,
         'isWatchlisted': False,
         'isBlacklisted': False
     },
@@ -234,6 +250,7 @@ users = [
         'email': 'fathia.izzati@gmail.com',
         'gender': 'F',
         'legal_id_no': '3174066609940001',
+        'isAvailable': True,
         'isWatchlisted': False,
         'isBlacklisted': False
     },
@@ -248,6 +265,7 @@ users = [
         'email': 'rocky.gerung@gmail.com',
         'gender': 'M',
         'legal_id_no': '7171042001590001',
+        'isAvailable': True,
         'isWatchlisted': False,
         'isBlacklisted': False
     },
@@ -262,6 +280,7 @@ users = [
         'email': 'hugo.samir@gmail.com',
         'gender': 'M',
         'legal_id_no': '3578021603040001',
+        'isAvailable': True,
         'isWatchlisted': False,
         'isBlacklisted': False
     },
@@ -276,6 +295,7 @@ users = [
         'email': 'yudha.brajamusti@gmail.com',
         'gender': 'M',
         'legal_id_no': '3175041709910001',
+        'isAvailable': True,
         'isWatchlisted': False,
         'isBlacklisted': False
     },
@@ -290,6 +310,7 @@ users = [
         'email': 'windah.basudara@gmail.com',
         'gender': 'M',
         'legal_id_no': '7171051403920001',
+        'isAvailable': True,
         'isWatchlisted': False,
         'isBlacklisted': False
     },
@@ -304,6 +325,7 @@ users = [
         'email': 'bayu.gatra@gmail.com',
         'gender': 'M',
         'legal_id_no': '3509301111910001',
+        'isAvailable': True,
         'isWatchlisted': False,
         'isBlacklisted': False
     },
@@ -318,6 +340,7 @@ users = [
         'email': 'rizky.pora@gmail.com',
         'gender': 'M',
         'legal_id_no': '8271022211890001',
+        'isAvailable': True,
         'isWatchlisted': False,
         'isBlacklisted': False
     },
@@ -332,6 +355,7 @@ users = [
         'email': 'ronaldo.kwateh@gmail.com',
         'gender': 'M',
         'legal_id_no': '3471071910040001',
+        'isAvailable': True,
         'isWatchlisted': False,
         'isBlacklisted': False
     },
@@ -346,6 +370,7 @@ users = [
         'email': 'ilija.spasojevic@gmail.com',
         'gender': 'M',
         'legal_id_no': '5104031109870001',
+        'isAvailable': True,
         'isWatchlisted': False,
         'isBlacklisted': False
     },
@@ -360,6 +385,7 @@ users = [
         'email': 'danurwindo@gmail.com',
         'gender': 'M',
         'legal_id_no': '3306060515510001',
+        'isAvailable': True,
         'isWatchlisted': False,
         'isBlacklisted': False
     },
@@ -374,6 +400,7 @@ users = [
         'email': 'yabes.roni@gmail.com',
         'gender': 'M',
         'legal_id_no': '5305040602950001',
+        'isAvailable': True,
         'isWatchlisted': False,
         'isBlacklisted': False
     },
@@ -388,6 +415,7 @@ users = [
         'email': 'andi.wijaya@gmail.com',
         'gender': 'M',
         'legal_id_no': '3275052007850001',
+        'isAvailable': True,
         'isWatchlisted': False,
         'isBlacklisted': False
     },
@@ -402,6 +430,7 @@ users = [
         'email': 'anggi.marito@gmail.com',
         'gender': 'F',
         'legal_id_no': '1202014603020001',
+        'isAvailable': True,
         'isWatchlisted': False,
         'isBlacklisted': False
     },
@@ -416,6 +445,7 @@ users = [
         'email': 'gregoria.mariska@gmail.com',
         'gender': 'F',
         'legal_id_no': '3312015108990001',
+        'isAvailable': True,
         'isWatchlisted': False,
         'isBlacklisted': False
     },
@@ -430,6 +460,7 @@ users = [
         'email': 'lusia.chebotina@yandex.com',
         'gender': 'F',
         'legal_id_no': '0140394839',
+        'isAvailable': True,
         'isWatchlisted': False,
         'isBlacklisted': False
     },
@@ -444,6 +475,7 @@ users = [
         'email': 'sergey.shnurov@yandex.com',
         'gender': 'M',
         'legal_id_no': '0245485932',
+        'isAvailable': True,
         'isWatchlisted': False,
         'isBlacklisted': False
     },
@@ -458,6 +490,7 @@ users = [
         'email': 'aleksandr.golovin@yandex.com',
         'gender': 'M',
         'legal_id_no': '0743484320',
+        'isAvailable': True,
         'isWatchlisted': False,
         'isBlacklisted': False
     },
@@ -472,6 +505,7 @@ users = [
         'email': 'maksim.glushenkov@yandex.com',
         'gender': 'M',
         'legal_id_no': '1523203943',
+        'isAvailable': True,
         'isWatchlisted': False,
         'isBlacklisted': False
     },
@@ -486,6 +520,7 @@ users = [
         'email': 'alsou.abramova@yandex.com',
         'gender': 'F',
         'legal_id_no': '2530329102',
+        'isAvailable': True,
         'isWatchlisted': False,
         'isBlacklisted': False
     },
@@ -500,6 +535,7 @@ users = [
         'email': 'mykhailo.mudryk@gmail.com',
         'gender': 'M',
         'legal_id_no': '2001010500001',
+        'isAvailable': True,
         'isWatchlisted': False,
         'isBlacklisted': False
     },
@@ -514,6 +550,7 @@ users = [
         'email': 'aliaksandr.hleb@yandex.com',
         'gender': 'M',
         'legal_id_no': '012834322',
+        'isAvailable': True,
         'isWatchlisted': False,
         'isBlacklisted': False
     },
@@ -528,6 +565,7 @@ users = [
         'email': 'taras.stepanenko@gmail.com',
         'gender': 'M',
         'legal_id_no': '1989080800001',
+        'isAvailable': True,
         'isWatchlisted': False,
         'isBlacklisted': False
     },
@@ -542,6 +580,7 @@ users = [
         'email': 'nadia.meikher@gmail.com',
         'gender': 'F',
         'legal_id_no': '1982041000001',
+        'isAvailable': True,
         'isWatchlisted': False,
         'isBlacklisted': False
     },
@@ -556,6 +595,7 @@ users = [
         'email': 'alena.lanskaya@gmail.com',
         'gender': 'F',
         'legal_id_no': '043932012',
+        'isAvailable': True,
         'isWatchlisted': False,
         'isBlacklisted': False
     },
@@ -570,6 +610,7 @@ users = [
         'email': 'sergey.khizhnichenko@yandex.com',
         'gender': 'M',
         'legal_id_no': '910717000001',
+        'isAvailable': True,
         'isWatchlisted': False,
         'isBlacklisted': False
     },
@@ -584,6 +625,7 @@ users = [
         'email': 'sabina.altynbekova@yandex.com',
         'gender': 'F',
         'legal_id_no': '961105000001',
+        'isAvailable': True,
         'isWatchlisted': False,
         'isBlacklisted': False
     },
@@ -598,6 +640,7 @@ users = [
         'email': 'manuchekhr.dzhalilov@yandex.com',
         'gender': 'M',
         'legal_id_no': '4849831029381',
+        'isAvailable': True,
         'isWatchlisted': False,
         'isBlacklisted': False
     },
@@ -612,6 +655,7 @@ users = [
         'email': 'abbosbek.fayzullaev@yandex.com',
         'gender': 'M',
         'legal_id_no': '493743921038293',
+        'isAvailable': True,
         'isWatchlisted': False,
         'isBlacklisted': False
     },
@@ -626,6 +670,7 @@ users = [
         'email': 'joel.kojo@yandex.com',
         'gender': 'M',
         'legal_id_no': '8475392',
+        'isAvailable': True,
         'isWatchlisted': False,
         'isBlacklisted': False
     },
@@ -640,6 +685,7 @@ users = [
         'email': 'henrikh.mkhitaryan@yandex.com',
         'gender': 'M',
         'legal_id_no': '0130430321',
+        'isAvailable': True,
         'isWatchlisted': False,
         'isBlacklisted': False
     },
@@ -654,6 +700,7 @@ users = [
         'email': 'sirusho.harutyunyan@yandex.com',
         'gender': 'F',
         'legal_id_no': '0148493212',
+        'isAvailable': True,
         'isWatchlisted': False,
         'isBlacklisted': False
     },
@@ -668,6 +715,7 @@ users = [
         'email': 'gunel.zeynalova@ygmail.com',
         'gender': 'F',
         'legal_id_no': '5637392',
+        'isAvailable': True,
         'isWatchlisted': False,
         'isBlacklisted': False
     },
@@ -682,6 +730,7 @@ users = [
         'email': 'marina.djundiet@gmail.com',
         'gender': 'F',
         'legal_id_no': '20483984',
+        'isAvailable': True,
         'isWatchlisted': False,
         'isBlacklisted': False
     },
@@ -696,6 +745,7 @@ users = [
         'email': 'marija.naumova@gmail.com',
         'gender': 'F',
         'legal_id_no': '23067310010',
+        'isAvailable': True,
         'isWatchlisted': False,
         'isBlacklisted': False
     },
@@ -710,6 +760,7 @@ users = [
         'email': 'arda.guler@gmail.com',
         'gender': 'M',
         'legal_id_no': '983423802932',
+        'isAvailable': True,
         'isWatchlisted': False,
         'isBlacklisted': False
     },
@@ -724,6 +775,7 @@ users = [
         'email': 'simge.sagin@gmail.com',
         'gender': 'F',
         'legal_id_no': '338910932833',
+        'isAvailable': True,
         'isWatchlisted': False,
         'isBlacklisted': False
     },
@@ -738,6 +790,7 @@ users = [
         'email': 'konstantinos.argyros@gmail.com',
         'gender': 'M',
         'legal_id_no': '287343324',
+        'isAvailable': True,
         'isWatchlisted': False,
         'isBlacklisted': False
     },
@@ -752,6 +805,7 @@ users = [
         'email': 'theo.rose@gmail.com',
         'gender': 'F',
         'legal_id_no': '2080897290011',
+        'isAvailable': True,
         'isWatchlisted': False,
         'isBlacklisted': False
     },
@@ -766,6 +820,7 @@ users = [
         'email': 'sardar.azmoun@gmail.com',
         'gender': 'M',
         'legal_id_no': '10398322921',
+        'isAvailable': True,
         'isWatchlisted': False,
         'isBlacklisted': False
     },
@@ -780,6 +835,7 @@ users = [
         'email': 'al.al-bulaihi@gmail.com',
         'gender': 'M',
         'legal_id_no': '11028934',
+        'isAvailable': True,
         'isWatchlisted': False,
         'isBlacklisted': False
     },
@@ -794,6 +850,7 @@ users = [
         'email': 'sarit.hadad@gmail.com',
         'gender': 'F',
         'legal_id_no': '398431029',
+        'isAvailable': True,
         'isWatchlisted': False,
         'isBlacklisted': False
     },
@@ -808,6 +865,7 @@ users = [
         'email': 'myriam.fares@gmail.com',
         'gender': 'F',
         'legal_id_no': '23812092',
+        'isAvailable': True,
         'isWatchlisted': False,
         'isBlacklisted': False
     },
@@ -822,6 +880,7 @@ users = [
         'email': 'mohamed.salah@gmail.com',
         'gender': 'M',
         'legal_id_no': '92831872302842',
+        'isAvailable': True,
         'isWatchlisted': False,
         'isBlacklisted': False
     },
@@ -836,6 +895,7 @@ users = [
         'email': 'aymen.hussein@gmail.com',
         'gender': 'M',
         'legal_id_no': '623721921271',
+        'isAvailable': True,
         'isWatchlisted': False,
         'isBlacklisted': False
     },
@@ -850,6 +910,7 @@ users = [
         'email': 'mohammed.rashid@gmail.com',
         'gender': 'M',
         'legal_id_no': '928373821',
+        'isAvailable': True,
         'isWatchlisted': False,
         'isBlacklisted': False
     },
@@ -864,6 +925,7 @@ users = [
         'email': 'riyad.mahrez@gmail.com',
         'gender': 'M',
         'legal_id_no': '827343121',
+        'isAvailable': True,
         'isWatchlisted': False,
         'isBlacklisted': False
     },
@@ -878,6 +940,7 @@ users = [
         'email': 'najoua.belyzel@gmail.com',
         'gender': 'F',
         'legal_id_no': '348931',
+        'isAvailable': True,
         'isWatchlisted': False,
         'isBlacklisted': False
     },
@@ -892,6 +955,7 @@ users = [
         'email': 'quim.barreiros@gmail.com',
         'gender': 'M',
         'legal_id_no': '42398412',
+        'isAvailable': True,
         'isWatchlisted': False,
         'isBlacklisted': False
     },
@@ -906,6 +970,7 @@ users = [
         'email': 'rosalia.vila@gmail.com',
         'gender': 'F',
         'legal_id_no': '28472039',
+        'isAvailable': True,
         'isWatchlisted': False,
         'isBlacklisted': False
     },
@@ -920,6 +985,7 @@ users = [
         'email': 'thiago.motta@gmail.com',
         'gender': 'M',
         'legal_id_no': '820828',
+        'isAvailable': True,
         'isWatchlisted': False,
         'isBlacklisted': False
     },
@@ -934,6 +1000,7 @@ users = [
         'email': 'andreas.frege@gmail.com',
         'gender': 'M',
         'legal_id_no': '923420',
+        'isAvailable': True,
         'isWatchlisted': False,
         'isBlacklisted': False
     },
@@ -948,6 +1015,7 @@ users = [
         'email': 'marco.van.basten@gmail.com',
         'gender': 'M',
         'legal_id_no': '012938',
+        'isAvailable': True,
         'isWatchlisted': False,
         'isBlacklisted': False
     },
@@ -962,6 +1030,7 @@ users = [
         'email': 'nicklas.bendtner@gmail.com',
         'gender': 'M',
         'legal_id_no': '1016881881',
+        'isAvailable': True,
         'isWatchlisted': False,
         'isBlacklisted': False
     },
@@ -976,6 +1045,7 @@ users = [
         'email': 'khvicha.kvaratskhelia@gmail.com',
         'gender': 'M',
         'legal_id_no': '7273210938',
+        'isAvailable': True,
         'isWatchlisted': False,
         'isBlacklisted': False
     },
@@ -990,6 +1060,7 @@ users = [
         'email': 'jamie.vardy@gmail.com',
         'gender': 'M',
         'legal_id_no': '870111',
+        'isAvailable': True,
         'isWatchlisted': False,
         'isBlacklisted': False
     },
@@ -1004,6 +1075,7 @@ users = [
         'email': 'roy.keane@gmail.com',
         'gender': 'M',
         'legal_id_no': '2874362',
+        'isAvailable': True,
         'isWatchlisted': False,
         'isBlacklisted': False
     },
@@ -1018,6 +1090,7 @@ users = [
         'email': 'jackson.irvine@gmail.com',
         'gender': 'M',
         'legal_id_no': '0389329',
+        'isAvailable': True,
         'isWatchlisted': False,
         'isBlacklisted': False
     },
@@ -1032,6 +1105,7 @@ users = [
         'email': 'awer.mabil@gmail.com',
         'gender': 'M',
         'legal_id_no': '01843981',
+        'isAvailable': True,
         'isWatchlisted': False,
         'isBlacklisted': False
     },
@@ -1046,6 +1120,7 @@ users = [
         'email': 'lorde.yelich-oconnor@gmail.com',
         'gender': 'F',
         'legal_id_no': '732843',
+        'isAvailable': True,
         'isWatchlisted': False,
         'isBlacklisted': False
     },
@@ -1060,6 +1135,7 @@ users = [
         'email': 'christian.pulisic@gmail.com',
         'gender': 'M',
         'legal_id_no': '03284732',
+        'isAvailable': True,
         'isWatchlisted': False,
         'isBlacklisted': False
     },
@@ -1074,6 +1150,7 @@ users = [
         'email': 'sabrina.carpenter@gmail.com',
         'gender': 'F',
         'legal_id_no': '08246237',
+        'isAvailable': True,
         'isWatchlisted': False,
         'isBlacklisted': False
     },
@@ -1088,6 +1165,7 @@ users = [
         'email': 'ana.barbara@gmail.com',
         'gender': 'F',
         'legal_id_no': '71011001',
+        'isAvailable': True,
         'isWatchlisted': False,
         'isBlacklisted': False
     },
@@ -1102,6 +1180,7 @@ users = [
         'email': 'alphonso.davies@gmail.com',
         'gender': 'M',
         'legal_id_no': '376432',
+        'isAvailable': True,
         'isWatchlisted': False,
         'isBlacklisted': False
     },
@@ -1116,6 +1195,7 @@ users = [
         'email': 'anitta.machado@gmail.com',
         'gender': 'F',
         'legal_id_no': '03439842307',
+        'isAvailable': True,
         'isWatchlisted': False,
         'isBlacklisted': False
     },
@@ -1130,6 +1210,7 @@ users = [
         'email': 'cleo.klepko@gmail.com',
         'gender': 'F',
         'legal_id_no': '19830625125',
+        'isAvailable': True,
         'isWatchlisted': False,
         'isBlacklisted': False
     },
@@ -1144,6 +1225,7 @@ users = [
         'email': 'dominik.szoboszlai@gmail.com',
         'gender': 'M',
         'legal_id_no': '30010250011',
+        'isAvailable': True,
         'isWatchlisted': False,
         'isBlacklisted': False
     },
@@ -1158,6 +1240,7 @@ users = [
         'email': 'kali.dumancic@gmail.com',
         'gender': 'F',
         'legal_id_no': '1808001895001',
+        'isAvailable': True,
         'isWatchlisted': False,
         'isBlacklisted': False
     },
@@ -1172,6 +1255,7 @@ users = [
         'email': 'alma.subasic@gmail.com',
         'gender': 'F',
         'legal_id_no': '3005994155001',
+        'isAvailable': True,
         'isWatchlisted': False,
         'isBlacklisted': False
     },
@@ -1186,6 +1270,7 @@ users = [
         'email': 'ronela.hajati@gmail.com',
         'gender': 'F',
         'legal_id_no': '8909020011',
+        'isAvailable': True,
         'isWatchlisted': False,
         'isBlacklisted': False
     },
@@ -1200,6 +1285,7 @@ users = [
         'email': 'andrea.andreeva@gmail.com',
         'gender': 'F',
         'legal_id_no': '870123000',
+        'isAvailable': True,
         'isWatchlisted': False,
         'isBlacklisted': False
     },
@@ -1214,6 +1300,7 @@ users = [
         'email': 'shin.tae-yong@gmail.com',
         'gender': 'M',
         'legal_id_no': '7010111770110',
+        'isAvailable': True,
         'isWatchlisted': False,
         'isBlacklisted': False
     },
@@ -1228,6 +1315,7 @@ users = [
         'email': 'jackie.chan@gmail.com',
         'gender': 'M',
         'legal_id_no': '264273',
+        'isAvailable': True,
         'isWatchlisted': False,
         'isBlacklisted': False
     },
@@ -1242,6 +1330,7 @@ users = [
         'email': 'kaoru.mitoma@gmail.com',
         'gender': 'M',
         'legal_id_no': '297438283120',
+        'isAvailable': True,
         'isWatchlisted': False,
         'isBlacklisted': False
     },
@@ -1256,6 +1345,7 @@ users = [
         'email': 'victor.osimhen@gmail.com',
         'gender': 'M',
         'legal_id_no': '14824627309',
+        'isAvailable': True,
         'isWatchlisted': False,
         'isBlacklisted': False
     },
@@ -1270,6 +1360,7 @@ users = [
         'email': 'asnawi.mangkualam@gmail.com',
         'gender': 'M',
         'legal_id_no': '7371040410990001',
+        'isAvailable': True,
         'isWatchlisted': False,
         'isBlacklisted': False
     },
@@ -1284,6 +1375,7 @@ users = [
         'email': 'maarten.paes@gmail.com',
         'gender': 'M',
         'legal_id_no': '3171011405980001',
+        'isAvailable': True,
         'isWatchlisted': False,
         'isBlacklisted': False
     },
@@ -1298,6 +1390,7 @@ users = [
         'email': 'marselino.ferdinan@gmail.com',
         'gender': 'M',
         'legal_id_no': '3175010909040001',
+        'isAvailable': True,
         'isWatchlisted': False,
         'isBlacklisted': False
     },
@@ -1312,6 +1405,7 @@ users = [
         'email': 'otavio.dutra@gmail.com',
         'gender': 'M',
         'legal_id_no': '3171012211830001',
+        'isAvailable': True,
         'isWatchlisted': False,
         'isBlacklisted': False
     },
@@ -1326,6 +1420,7 @@ users = [
         'email': 'osas.saha@gmail.com',
         'gender': 'M',
         'legal_id_no': '3171010602950001',
+        'isAvailable': True,
         'isWatchlisted': False,
         'isBlacklisted': False
     },
@@ -1340,6 +1435,7 @@ users = [
         'email': 'victor.igbonefo@gmail.com',
         'gender': 'M',
         'legal_id_no': '3171011010850001',
+        'isAvailable': True,
         'isWatchlisted': False,
         'isBlacklisted': False
     },
@@ -1354,6 +1450,7 @@ users = [
         'email': 'ismed.sofyan@gmail.com',
         'gender': 'M',
         'legal_id_no': '1106052808790001',
+        'isAvailable': True,
         'isWatchlisted': False,
         'isBlacklisted': False
     },
@@ -1368,6 +1465,7 @@ users = [
         'email': 'ezra.walian@gmail.com',
         'gender': 'M',
         'legal_id_no': '3171012210970001',
+        'isAvailable': True,
         'isWatchlisted': False,
         'isBlacklisted': False
     },
@@ -1382,6 +1480,7 @@ users = [
         'email': 'rafael.maitimo@gmail.com',
         'gender': 'M',
         'legal_id_no': '3171011703840001',
+        'isAvailable': True,
         'isWatchlisted': False,
         'isBlacklisted': False
     },
@@ -1396,6 +1495,7 @@ users = [
         'email': 'asteriska.widiantini@gmail.com',
         'gender': 'F',
         'legal_id_no': '3273164603880001',
+        'isAvailable': True,
         'isWatchlisted': False,
         'isBlacklisted': False
     }
