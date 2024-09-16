@@ -16,7 +16,7 @@ from lists.validator_set import car_brands
 def readData():
     choiceReadDataFlag = True
 
-    while(bool(choiceReadDataFlag)):
+    while (bool(choiceReadDataFlag)):
         choiceReadData = dataChooser('get')
         if (choiceReadData == '1'):
             getDataFromList(users, 'users', 'get')
@@ -31,7 +31,7 @@ def readData():
             choiceReadDataFlag = False
         else:
             print("Invalid choice")
-            retypeOption = input("Do you want to retype? (y or else as no): ")
+            retypeOption = input("Do you want to retype the choice? (y or else as no): ")
             if (retypeOption.lower() in ['y', 'yes']):
                 continue
             else:
@@ -39,6 +39,7 @@ def readData():
 
 def getDataFromList(listData, dataTable, method, isRent = False):
     table = tableHeaderMaker(dataTable, isRent)
+    indexer = getValueFromCheckingTableName(dataTable, 'indexer')
 
     choiceReadDataOptionFlag = True
 
@@ -53,9 +54,17 @@ def getDataFromList(listData, dataTable, method, isRent = False):
             if (method == 'get'):
                 processedData = listSorter(listData, dataTable)
                 dataPrinter(table, dataTable, processedData, isRent)
+            elif (method == 'put'):
+                idsList = []
+                for i in range(len(listData)):
+                    idsList.append(listData[i][indexer])
+                putData(listData, dataTable, method, idsList, isRent)
             choiceReadDataOptionFlag = False
         elif (choiceReadDataOption == '2'):
-            conditions = int(input(f'\nInput query conditions: '))
+            tempConditions = input(f'\nInput query conditions: ')
+            conditions = 0
+            if (bool(tempConditions.isdigit())):
+                conditions = int(tempConditions)
             setsList = []
             logicalConnectorsList = []
             
@@ -73,6 +82,7 @@ def getDataFromList(listData, dataTable, method, isRent = False):
             
             if (len(logicalConnectorsList) < len(setsList)):
                 print("Invalid querying")
+                choiceReadDataOptionFlag = False
                 readData()
 
             setResult = set()
@@ -99,13 +109,15 @@ def getDataFromList(listData, dataTable, method, isRent = False):
                                 retrievedDataList.append(listData[j])
                     processedData = listSorter(retrievedDataList, dataTable)
                     dataPrinter(table, dataTable, processedData, isRent)
+                elif (method == 'put'):
+                    putData(listData, dataTable, method, setResultToList, isRent)
                 choiceReadDataOptionFlag = False
         elif (choiceReadDataOption == '3'):
             choiceReadDataOptionFlag = False
             readData()
         else:
             print("Invalid choice")
-            retypeOption = input("Do you want to retype? (y or else as no): ")
+            retypeOption = input("Do you want to retype the choice? (y or else as no): ")
             if (retypeOption.lower() in ['y', 'yes']):
                 continue
             else:
@@ -132,20 +144,22 @@ def filterer(i, listData, dataTable, method):
 
     while (bool(filterKeyFlag)):
         filterKey = input(f'\nChoose selected {method} data option ({stringJoin.join(columnHeader)}): ')
-        if filterKey in columnHeader:
+        if (filterKey in columnHeader):
             if (method == 'get'):
                 filterValue = inputValue(filterKey, 'get')
+            elif (method == 'put'):
+                filterValue = inputValue(filterKey, 'put')
             
             if (filterValue != ''):
                 signList = ['is_equal', 'is_not_equal', 'is_greater_than', 'is_greater_than_or_equal', 'is_lower_than', 'is_lower_than_or_equal', 'like_first', 'like_last', 'like_middle']
                 signFlag = True
 
-                while(bool(signFlag)):
+                while (bool(signFlag)):
                     sign = input(f'\nChoose comparator sign {stringJoin.join(signList)}: ').lower()
 
                     if (sign not in signList):
-                        print("Invalid choice")
-                        retypeOption = input("Do you want to retype? (y or else as no): ")
+                        print("Invalid comparator")
+                        retypeOption = input("Do you want to retype the comparator? (y or else as no): ")
                         if (retypeOption.lower() in ['y', 'yes']):
                             continue
                         else:
@@ -153,8 +167,8 @@ def filterer(i, listData, dataTable, method):
                     else:
                         if (filterKey in ['user_id', 'car_id', 'rent_id', 'daily_fee', 'fee', 'date_of_birth', 'rent_date', 'return_date']):
                             if (sign in ['like_first', 'like_last', 'like_middle']):
-                                print("Invalid choice")
-                                retypeOption = input("Do you want to retype? (y or else as no): ")
+                                print("Invalid comparator")
+                                retypeOption = input("Do you want to retype the comparator? (y or else as no): ")
                                 if (retypeOption.lower() in ['y', 'yes']):
                                     continue
                                 else:
@@ -164,8 +178,8 @@ def filterer(i, listData, dataTable, method):
                                 signFlag = False
                         elif (filterKey in ['isWatchlisted', 'isBlacklisted', 'isAvailable', 'isDamaged', 'isReturned', 'isDamagedAfterUsage']):
                             if (sign not in ['is_equal', 'is_not_equal']):
-                                print("Invalid choice")
-                                retypeOption = input("Do you want to retype? (y or else as no): ")
+                                print("Invalid comparator")
+                                retypeOption = input("Do you want to retype the comparator? (y or else as no): ")
                                 if (retypeOption.lower() in ['y', 'yes']):
                                     continue
                                 else:
@@ -175,8 +189,8 @@ def filterer(i, listData, dataTable, method):
                                 signFlag = False
                         else:
                             if (sign in ['is_greater_than', 'is_greater_than_or_equal', 'is_lower_than', 'is_lower_than_or_equal']):
-                                print("Invalid choice")
-                                retypeOption = input("Do you want to retype? (y or else as no): ")
+                                print("Invalid comparator")
+                                retypeOption = input("Do you want to retype the comparator? (y or else as no): ")
                                 if (retypeOption.lower() in ['y', 'yes']):
                                     continue
                                 else:
@@ -190,7 +204,7 @@ def filterer(i, listData, dataTable, method):
         
         else:
             print("Invalid choice")
-            retypeOption = input("Do you want to retype? (y or else as no): ")
+            retypeOption = input("Do you want to retype the choice? (y or else as no): ")
             if (retypeOption.lower() in ['y', 'yes']):
                 continue
             else:
@@ -210,7 +224,7 @@ def inputValue(inputKey, method):
                 flag = False
             else:
                 print("Invalid input")
-                retypeOption = input("Do you want to retype? (y or else as no): ")
+                retypeOption = input("Do you want to retype the value? (y or else as no): ")
                 if (retypeOption.lower() in ['y', 'yes']):
                     continue
                 else:
@@ -234,7 +248,7 @@ def inputValue(inputKey, method):
                     flag = False
                 else:
                     print("Invalid input")
-                    retypeOption = input("Do you want to retype? (y or else as no): ")
+                    retypeOption = input("Do you want to retype the value? (y or else as no): ")
                     if (retypeOption.lower() in ['y', 'yes']):
                         continue
                     else:
@@ -255,7 +269,7 @@ def inputValue(inputKey, method):
                 flag = False
             else:
                 print("Invalid input")
-                retypeOption = input("Do you want to retype? (y or else as no): ")
+                retypeOption = input("Do you want to retype the value? (y or else as no): ")
                 if (retypeOption.lower() in ['y', 'yes']):
                     continue
                 else:
@@ -272,7 +286,7 @@ def inputValue(inputKey, method):
                 flag = False
             else:
                 print("Invalid input")
-                retypeOption = input("Do you want to retype? (y or else as no): ")
+                retypeOption = input("Do you want to retype the value? (y or else as no): ")
                 if (retypeOption.lower() in ['y', 'yes']):
                     continue
                 else:
@@ -286,7 +300,7 @@ def inputValue(inputKey, method):
                 flag = False
             else:
                 print("Invalid input")
-                retypeOption = input("Do you want to retype? (y or else as no): ")
+                retypeOption = input("Do you want to retype the value? (y or else as no): ")
                 if (retypeOption.lower() in ['y', 'yes']):
                     continue
                 else:
@@ -300,7 +314,7 @@ def inputValue(inputKey, method):
                 flag = False
             else:
                 print("Invalid input")
-                retypeOption = input("Do you want to retype? (y or else as no): ")
+                retypeOption = input("Do you want to retype the value? (y or else as no): ")
                 if (retypeOption.lower() in ['y', 'yes']):
                     continue
                 else:
@@ -315,7 +329,7 @@ def inputValue(inputKey, method):
                 flag = False
             else:
                 print("Invalid input")
-                retypeOption = input("Do you want to retype? (y or else as no): ")
+                retypeOption = input("Do you want to retype the value? (y or else as no): ")
                 if (retypeOption.lower() in ['y', 'yes']):
                     continue
                 else:
@@ -332,7 +346,7 @@ def inputValue(inputKey, method):
                 flag = False
             else:
                 print("Invalid input")
-                retypeOption = input("Do you want to retype? (y or else as no): ")
+                retypeOption = input("Do you want to retype the value? (y or else as no): ")
                 if (retypeOption.lower() in ['y', 'yes']):
                     continue
                 else:
@@ -356,9 +370,9 @@ def dataChecker(listData, dataTable, filterKey, filterValue, sign):
     listData = listSorter(listData, dataTable)
     filteredDataSet = set()
     for i in range(len(listData)):
-        birthdate = listData[i][filterKey]
+        storedDate = listData[i][filterKey]
         if (filterKey in ['date_of_birth', 'rent_date', 'return_date']):
-            comparationResult = comparationFunction(sign, datetime.strptime(birthdate, '%Y-%m-%d'), datetime.strptime(filterValue, '%Y-%m-%d'))
+            comparationResult = comparationFunction(sign, datetime.strptime(storedDate, '%Y-%m-%d'), datetime.strptime(filterValue, '%Y-%m-%d'))
         elif (filterKey not in ['date_of_birth', 'rent_date', 'return_date'] and (bool(isinstance(filterValue, str)) and filterValue != '')):
             comparationResult = comparationFunction(sign, listData[i][filterKey].lower(), filterValue.lower())
         elif (filterValue != ''):
@@ -391,7 +405,6 @@ def getValueFromCheckingTableName(dataTable, valueNeeded):
         elif (dataTable == 'rents'):
             columnHeader = rentsColumnsHeader
         return columnHeader
-
 
 def comparationFunction(functionString, a, b):
     if (functionString == 'is_equal'):
@@ -477,14 +490,14 @@ def logicalConnector(i):
         print(f"Logical Connector No. {i}")
         validator = True
         result = ''            
-        while(bool(validator)):
+        while (bool(validator)):
             logicalConnector = input("\nInput logical connector? (and / or): ")
             if (logicalConnector in ['and', 'or']):
                 result = logicalConnector
                 validator = False
             else:
-                print("Invalid choice")
-                retypeOption = input("Do you want to retype? (y or else as no): ")
+                print("Invalid logical connecto")
+                retypeOption = input("Do you want to retype the logical connector? (y or else as no): ")
                 if (retypeOption.lower() in ['y', 'yes']):
                     continue
                 else:
@@ -537,7 +550,7 @@ def tableAppend(listData, table, i, tableRowNumber, isRent = False):
 def createData():
     choiceCreateDataFlag = True
 
-    while(bool(choiceCreateDataFlag)):
+    while (bool(choiceCreateDataFlag)):
         choiceCreateData = dataChooser('post')
         if (choiceCreateData == '1'):
             insertData(users, 'users')
@@ -552,7 +565,7 @@ def createData():
             choiceCreateDataFlag = False
         else:
             print("Invalid choice")
-            retypeOption = input("Do you want to retype? (y or else as no): ")
+            retypeOption = input("Do you want to retype the choice? (y or else as no): ")
             if (retypeOption.lower() in ['y', 'yes']):
                 continue
             else:
@@ -582,7 +595,6 @@ def insertData(listData, dataTable, isRent = False):
         for i in range(len(cars)):
             carIdsList.append(cars[i]['car_id'])
 
-    
     missingIdsList = []
     for i in range(max(idsList)):
         availabiliyFlag = False
@@ -595,6 +607,10 @@ def insertData(listData, dataTable, isRent = False):
     dataAmount = inputValue('data_amount', 'post')
     validatedInsertedDataCount = 0
     savedDataForShown = []
+
+    if (dataAmount == ''):
+        dataAmount = 0
+    
     for i in range(dataAmount):
         print(f'\nInsert new data no. {i + 1}')
         inputUniqueValue = ''
@@ -612,7 +628,7 @@ def insertData(listData, dataTable, isRent = False):
                     flagUniqueValueChecker = False
                 else:
                     print("Data already exists")
-                    retypeOption = input("Do you want to retype? (y or else as no): ")
+                    retypeOption = input("Do you want to retype the id? (y or else as no): ")
                     if (retypeOption.lower() in ['y', 'yes']):
                         continue
                     else:
@@ -626,8 +642,8 @@ def insertData(listData, dataTable, isRent = False):
                     if (bool(users[userIdsList.index(inputUserId)]['isBlacklisted']) == False and bool(users[userIdsList.index(inputUserId)]['isAvailable']) == True):
                         flagUserIdChecker = False
                     else:
-                        print("Data can not be submitted: user is blacklisted")
-                        retypeOption = input("Do you want to retype? (y or else as no): ")
+                        print("Data can not be submitted: user is forbidden")
+                        retypeOption = input("Do you want to retype the id? (y or else as no): ")
                         if (retypeOption.lower() in ['y', 'yes']):
                             continue
                         else:
@@ -635,7 +651,7 @@ def insertData(listData, dataTable, isRent = False):
                             flagUserIdChecker = False
                 else:
                     print("No Data Found")
-                    retypeOption = input("Do you want to retype? (y or else as no): ")
+                    retypeOption = input("Do you want to retype the id? (y or else as no): ")
                     if (retypeOption.lower() in ['y', 'yes']):
                         continue
                     else:
@@ -645,11 +661,11 @@ def insertData(listData, dataTable, isRent = False):
             while (bool(flagCarIdChecker)):
                 inputCarId = inputValue('car_id', 'post')
                 if (inputCarId in carIdsList):
-                    if (bool(cars[carIdsList.index(inputCarId)]['isAvailable'])):
+                    if (bool(cars[carIdsList.index(inputCarId)]['isDamaged']) == False and bool(cars[carIdsList.index(inputCarId)]['isAvailable']) == True):
                         flagCarIdChecker = False
                     else:
-                        print("Data can not be submitted: user is not available")
-                        retypeOption = input("Do you want to retype? (y or else as no): ")
+                        print("Data can not be submitted: car is forbidden")
+                        retypeOption = input("Do you want to retype the id? (y or else as no): ")
                         if (retypeOption.lower() in ['y', 'yes']):
                             continue
                         else:
@@ -657,7 +673,7 @@ def insertData(listData, dataTable, isRent = False):
                             flagCarIdChecker = False
                 else:
                     print("No Data Found")
-                    retypeOption = input("Do you want to retype? (y or else as no): ")
+                    retypeOption = input("Do you want to retype the id? (y or else as no): ")
                     if (retypeOption.lower() in ['y', 'yes']):
                         continue
                     else:
@@ -706,13 +722,24 @@ def insertData(listData, dataTable, isRent = False):
                 if (saveDataOption.lower() in ['y', 'yes']):
                     savedDataForShown.append(newData)
                     listData.append(newData)
+                    if (dataTable in ['rents']):
+                        indexUser = ''
+                        indexCar = ''
+                        for i in range(len(users)):
+                            if (inputUserId == users[i]['user_id']):
+                                indexUser = i
+                        for j in range(len(cars)):
+                            if (inputCarId == cars[j]['car_id']):
+                                indexCar = j
+                        users[indexUser]['isAvailable'] = False
+                        cars[indexCar]['isAvailable'] = False
                     validatedInsertedDataCount += 1
                 else:
                     print('\nData is decided to be not submitted')
             else:
                 print('\nData is not submitted')
         else:
-            print('\nData is not submitted')
+            print('\Illegal data attempted to be submitted')
 
     if (len(savedDataForShown) == 0):
         print('\nNo Data Saved')
@@ -726,6 +753,118 @@ def newDataIdPicker(validatedInsertedDataCount, missingIdsList, idsList):
     else:
         return max(idsList) + validatedInsertedDataCount + 1
 
+def updateData():
+    choiceReadDataFlag = True
+
+    while (bool(choiceReadDataFlag)):
+        choiceReadData = dataChooser('put')
+        if (choiceReadData == '1'):
+            getDataFromList(users, 'users', 'put')
+            choiceReadDataFlag = False
+        elif (choiceReadData == '2'):
+            getDataFromList(cars, 'cars', 'put')
+            choiceReadDataFlag = False
+        elif (choiceReadData == '3'):
+            getDataFromList(rents, 'rents', 'put', True)
+            choiceReadDataFlag = False
+        elif (choiceReadData == '4'):
+            choiceReadDataFlag = False
+        else:
+            print("Invalid choice")
+            retypeOption = input("Do you want to retype the choice? (y or else as no): ")
+            if (retypeOption.lower() in ['y', 'yes']):
+                continue
+            else:
+                choiceReadDataFlag = False
+
+def putData(listData, dataTable, method, idsList, isRent):
+    columnHeader = getValueFromCheckingTableName(dataTable, 'column_header')
+    indexer = getValueFromCheckingTableName(dataTable, 'indexer')
+    updateValidator = False
+
+    putDataFlag = True
+    while (bool(putDataFlag)):
+        stringJoin = ' / '
+        inputKey = input(f'\nChoose selected {method} data option ({stringJoin.join(columnHeader)}): ')
+        if (inputKey in columnHeader):
+            updatingValueFlag = True
+            while (bool(updatingValueFlag)):
+                provisionalValue = ''
+                print('\nLine below is provided for value changing')
+                provisionalValue = inputValue(inputKey, method)
+
+                if (inputKey in ['rent_date', 'return_date']):
+                    for i in range(len(idsList)):
+                        indexForChecking = ''
+                        for j in range(len(listData)):
+                            if (listData[j][indexer] == idsList[i]):
+                                indexForChecking = j
+                        if ((inputKey == 'rent_date') and (datetime.strptime(listData[indexForChecking]['return_date'], '%Y-%m-%d') <= datetime.strptime(provisionalValue, '%Y-%m-%d'))):
+                            provisionalValue = ''
+                        if ((inputKey == 'return_date') and (datetime.strptime(listData[indexForChecking]['rent_date'], '%Y-%m-%d') >= datetime.strptime(provisionalValue, '%Y-%m-%d'))):
+                            provisionalValue = ''
+                
+                if (provisionalValue != ''):                    
+                    for i in range(len(idsList)):
+                        indexForUpdating = ''
+                        for j in range(len(listData)):
+                            if (listData[j][indexer] == idsList[i]):
+                                indexForUpdating = j
+                        listData[indexForUpdating][inputKey] = provisionalValue
+                        if (inputKey == 'isReturned' and provisionalValue == True):
+                            for k in range(len(cars)):
+                                if (cars[k]['car_id'] == listData[indexForUpdating]['car_id']):
+                                    cars[k]['isAvailable'] = True
+                            for m in range(len(users)):
+                                if (users[m]['user_id'] == listData[indexForUpdating]['user_id']):
+                                    users[m]['isAvailable'] = True
+                        if (inputKey == 'isDamagedAfterUsage' and provisionalValue == True):
+                            for k in range(len(cars)):
+                                if (cars[k]['car_id'] == listData[indexForUpdating]['car_id']):
+                                    cars[k]['isDamaged'] = True
+                            for m in range(len(users)):
+                                if (users[m]['user_id'] == listData[indexForUpdating]['user_id']):
+                                    if (bool(users[m]['isWatchlisted'])):
+                                        users[m]['isBlacklisted'] = True
+                                    else:
+                                        users[m]['isWatchlisted'] = True                                        
+
+                    updateValidator = True
+                    continueUpdatingOption = input('\nDo you want to continue updating? (y or else as no): ')
+                    if (continueUpdatingOption.lower() in ['y', 'yes']):
+                        updatingValueFlag = False
+                        continue
+                    else:
+                        updatingValueFlag = False
+                        putDataFlag = False
+                else:
+                    print("Invalid input")
+                    retypeOption = input("Do you want to retype the value? (y or else as no): ")
+                    if (retypeOption.lower() in ['y', 'yes']):
+                        continue
+                    else:
+                        updatingValueFlag = False
+                        putDataFlag = False
+        else:
+            print("Invalid choice")
+            retypeOption = input("Do you want to retype the choice? (y or else as no): ")
+            if (retypeOption.lower() in ['y', 'yes']):
+                continue
+            else:
+                putDataFlag = False
+    
+    if (bool(updateValidator)):
+        print(f'\nTable {dataTable} has been updated')
+        savedDataForShown = []
+        for i in range(len(idsList)):
+            indexForUpdating = ''
+            for j in range(len(listData)):
+                if (listData[j][indexer] == idsList[i]):
+                    indexForUpdating = j
+            savedDataForShown.append(listData[indexForUpdating])
+
+        table = tableHeaderMaker(dataTable, isRent)
+        dataPrinter(table, dataTable, savedDataForShown, isRent)
 
 def dataChooser(method):
     print('\nChoose data:')
@@ -745,13 +884,15 @@ def menuDisplay():
     print("5. Exit")
 
 def main():
-    while True:
+    while (True):
         menuDisplay()
         choice = input('\nChoose selected menu (1-5): ')
         if (choice == '1'):
             readData()
-        if (choice == '2'):
+        elif (choice == '2'):
             createData()
+        elif (choice == '3'):
+            updateData()
         elif (choice == '5'):
             print('\nProgram has been stopped')
             break
