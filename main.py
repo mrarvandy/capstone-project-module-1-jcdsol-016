@@ -15,7 +15,6 @@ from lists.validator_set import car_brands
 
 def readData():
     choiceReadDataFlag = True
-
     while (bool(choiceReadDataFlag)):
         choiceReadData = dataChooser('get')
         if (choiceReadData == '1'):
@@ -59,6 +58,20 @@ def getDataFromList(listData, dataTable, method, isRent = False):
                 for i in range(len(listData)):
                     idsList.append(listData[i][indexer])
                 putData(listData, dataTable, method, idsList, isRent)
+            elif (method == 'delete'):
+                confirmation = input('\nDelete data? (y or else as no): ')
+                confirmationFlag = False
+                if (confirmation.lower() in ['y', 'yes']):
+                    confirmationFlag = True
+
+                if (bool(confirmationFlag)):
+                    print('\nSuccessfully deleting data for row(s) below:')
+                    processedData = listSorter(listData, dataTable)
+                    dataPrinter(table, dataTable, processedData, isRent)
+                    listData.clear()
+                    if (dataTable == 'users' or dataTable == 'cars'):
+                        rents.clear()
+                    
             choiceReadDataOptionFlag = False
         elif (choiceReadDataOption == '2'):
             tempConditions = input(f'\nInput query conditions: ')
@@ -111,6 +124,26 @@ def getDataFromList(listData, dataTable, method, isRent = False):
                     dataPrinter(table, dataTable, processedData, isRent)
                 elif (method == 'put'):
                     putData(listData, dataTable, method, setResultToList, isRent)
+                elif (method == 'delete'):
+                    confirmation = input('\nDelete data? (y or else as no): ')
+                    confirmationFlag = False
+                    if (confirmation.lower() in ['y', 'yes']):
+                        confirmationFlag = True
+
+                    if (bool(confirmationFlag)):
+                        retrievedDataList = []
+                        indexer = getValueFromCheckingTableName(dataTable, 'indexer')
+
+                        for i in range(len(setResultToList)):
+                            for j in range(len(listData)):
+                                if (setResultToList[i] == listData[j][indexer]):
+                                    retrievedDataList.append(listData[j])
+                        print('\nSuccessfully deleting data for this rows:')
+                        processedData = listSorter(retrievedDataList, dataTable)
+                        dataPrinter(table, dataTable, processedData, isRent)
+
+                        deleteData(listData, dataTable, setResultToList, isRent)
+                
                 choiceReadDataOptionFlag = False
         elif (choiceReadDataOption == '3'):
             choiceReadDataOptionFlag = False
@@ -125,9 +158,9 @@ def getDataFromList(listData, dataTable, method, isRent = False):
 
 def tableHeaderMaker(dataTable, isRent = False):
     columnHeader = getValueFromCheckingTableName(dataTable, 'column_header')
-
     columnNameList = ['no.']
     columnNameList.extend(columnHeader)
+
     if (bool(isRent)):
         columnNameList.extend(['user.user_id', 'user.name', 'user.legal_id_no', 'car.car_id', 'car.brand', 'car.type', 'car.no_plate'])
     table = PrettyTable(columnNameList)
@@ -136,12 +169,11 @@ def tableHeaderMaker(dataTable, isRent = False):
 
 def filterer(i, listData, dataTable, method):
     print(f'\nCondition No. {i + 1}')
-    stringJoin = ' / '
-    filterKeyFlag = True
     resultSet = []
 
     columnHeader = getValueFromCheckingTableName(dataTable, 'column_header')
-
+    stringJoin = ' / '
+    filterKeyFlag = True
     while (bool(filterKeyFlag)):
         filterKey = input(f'\nChoose selected {method} data option ({stringJoin.join(columnHeader)}): ')
         if (filterKey in columnHeader):
@@ -149,6 +181,8 @@ def filterer(i, listData, dataTable, method):
                 filterValue = inputValue(filterKey, 'get')
             elif (method == 'put'):
                 filterValue = inputValue(filterKey, 'put')
+            elif (method == 'delete'):
+                filterValue = inputValue(filterKey, 'delete')
             
             if (filterValue != ''):
                 signList = ['is_equal', 'is_not_equal', 'is_greater_than', 'is_greater_than_or_equal', 'is_lower_than', 'is_lower_than_or_equal', 'like_first', 'like_last', 'like_middle']
@@ -511,17 +545,20 @@ def listSorter(listData, dataTable):
         sortedList = listData
         temp = listData[0]
         indexer = getValueFromCheckingTableName(dataTable, 'indexer')
+
         for i in range(len(sortedList)):
             for j in range(len(sortedList)):
                 if sortedList[i][indexer] < sortedList[j][indexer]:
                     temp = sortedList[i]
                     sortedList[i] = sortedList[j]
                     sortedList[j] = temp
+        
         return sortedList
     
 def dataPrinter(table, dataTable, listData, isRent):
     tableRowNumber = 1
     listData = listSorter(listData, dataTable)
+
     for i in range(len(listData)):
         if (bool(isRent)):
             tableAppend(listData, table, i, tableRowNumber, True)
@@ -529,6 +566,7 @@ def dataPrinter(table, dataTable, listData, isRent):
         else:
             tableAppend(listData, table, i, tableRowNumber)
             tableRowNumber += 1
+    
     print('\nData List:')
     print(table)
     
@@ -540,16 +578,35 @@ def tableAppend(listData, table, i, tableRowNumber, isRent = False):
         for j in range(len(users)):
             if (users[j]['user_id'] == listData[i]['user_id']):
                 userIndex = j
+        
         carIndex = 0
         for j in range(len(cars)):
             if (cars[j]['car_id'] == listData[i]['car_id']):
                 carIndex = j
-        rowValuesList.extend([users[userIndex]['user_id'], users[userIndex]['name'], users[userIndex]['legal_id_no'], cars[carIndex]['car_id'], cars[carIndex]['brand'], cars[carIndex]['type'], cars[carIndex]['no_plate']])
+        
+        user_userId = ''
+        user_name = ''
+        user_legalIdNo = ''
+        car_carId = ''
+        car_brand = ''
+        car_type = ''
+        car_noPlate = ''
+
+        if (userIndex != 0):
+            user_userId = users[userIndex]['user_id']
+            user_name = users[userIndex]['name']
+            user_legalIdNo = users[userIndex]['legal_id_no']
+
+        if (carIndex != 0):
+            car_carId = cars[carIndex]['car_id']
+            car_brand = cars[carIndex]['brand']
+            car_type = cars[carIndex]['type']
+            car_noPlate = cars[carIndex]['no_plate']
+        rowValuesList.extend([user_userId, user_name, user_legalIdNo, car_carId, car_brand, car_type, car_noPlate])
     table.add_row(rowValuesList)
 
 def createData():
     choiceCreateDataFlag = True
-
     while (bool(choiceCreateDataFlag)):
         choiceCreateData = dataChooser('post')
         if (choiceCreateData == '1'):
@@ -754,28 +811,27 @@ def newDataIdPicker(validatedInsertedDataCount, missingIdsList, idsList):
         return max(idsList) + validatedInsertedDataCount + 1
 
 def updateData():
-    choiceReadDataFlag = True
-
-    while (bool(choiceReadDataFlag)):
-        choiceReadData = dataChooser('put')
-        if (choiceReadData == '1'):
+    choiceUpdateDataFlag = True
+    while (bool(choiceUpdateDataFlag)):
+        choiceUpdateData = dataChooser('put')
+        if (choiceUpdateData == '1'):
             getDataFromList(users, 'users', 'put')
-            choiceReadDataFlag = False
-        elif (choiceReadData == '2'):
+            choiceUpdateDataFlag = False
+        elif (choiceUpdateData == '2'):
             getDataFromList(cars, 'cars', 'put')
-            choiceReadDataFlag = False
-        elif (choiceReadData == '3'):
+            choiceUpdateDataFlag = False
+        elif (choiceUpdateData == '3'):
             getDataFromList(rents, 'rents', 'put', True)
-            choiceReadDataFlag = False
-        elif (choiceReadData == '4'):
-            choiceReadDataFlag = False
+            choiceUpdateDataFlag = False
+        elif (choiceUpdateData == '4'):
+            choiceUpdateDataFlag = False
         else:
             print("Invalid choice")
             retypeOption = input("Do you want to retype the choice? (y or else as no): ")
             if (retypeOption.lower() in ['y', 'yes']):
                 continue
             else:
-                choiceReadDataFlag = False
+                choiceUpdateDataFlag = False
 
 def putData(listData, dataTable, method, idsList, isRent):
     columnHeader = getValueFromCheckingTableName(dataTable, 'column_header')
@@ -866,6 +922,48 @@ def putData(listData, dataTable, method, idsList, isRent):
         table = tableHeaderMaker(dataTable, isRent)
         dataPrinter(table, dataTable, savedDataForShown, isRent)
 
+def deleteData(listData, dataTable, idsList, isRent):
+    indexer = getValueFromCheckingTableName(dataTable, 'indexer')
+    indexForDeleting = ''
+    indexForDeletingInRent = ''
+
+    for i in range(len(idsList)):
+        for j in range(len(listData)):
+            if (idsList[i] == listData[j][indexer]):
+                indexForDeleting = j
+    
+    if (isRent == False):
+        for k in range(len(rents)):
+            if (listData[indexForDeleting][indexer] == rents[k][indexer]):
+                indexForDeletingInRent = k
+        if (indexForDeletingInRent != ''):
+            del rents[indexForDeletingInRent]
+    
+    del listData[indexForDeleting]
+
+def removeData():
+    choiceRemoveDataFlag = True
+    while (bool(choiceRemoveDataFlag)):
+        choiceRemoveData = dataChooser('put')
+        if (choiceRemoveData == '1'):
+            getDataFromList(users, 'users', 'delete')
+            choiceRemoveDataFlag = False
+        elif (choiceRemoveData == '2'):
+            getDataFromList(cars, 'cars', 'delete')
+            choiceRemoveDataFlag = False
+        elif (choiceRemoveData == '3'):
+            getDataFromList(rents, 'rents', 'delete', True)
+            choiceRemoveDataFlag = False
+        elif (choiceRemoveData == '4'):
+            choiceRemoveDataFlag = False
+        else:
+            print("Invalid choice")
+            retypeOption = input("Do you want to retype the choice? (y or else as no): ")
+            if (retypeOption.lower() in ['y', 'yes']):
+                continue
+            else:
+                choiceRemoveDataFlag = False
+
 def dataChooser(method):
     print('\nChoose data:')
     print("1. Users")
@@ -893,6 +991,8 @@ def main():
             createData()
         elif (choice == '3'):
             updateData()
+        elif (choice == '4'):
+            removeData()
         elif (choice == '5'):
             print('\nProgram has been stopped')
             break
