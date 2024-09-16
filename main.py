@@ -739,7 +739,7 @@ def insertData(listData, dataTable, isRent = False):
             else:
                 print('\nData is not submitted')
         else:
-            print('Illegal data attempted to be submitted')
+            print('\nIllegal data attempted to be submitted')
 
     if (len(savedDataForShown) == 0):
         print('\nNo Data Saved')
