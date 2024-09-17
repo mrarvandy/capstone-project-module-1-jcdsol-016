@@ -1,4 +1,4 @@
-# capstone-project-module-1-jcdsol-016
+# Car Rental Case for Module 1 Capstone Project
 
 This module is handling a python block of functions worked for a car rental case.\
 This a-supposed-to-be-called-app will deal CRUD methods in regular functions for three lists to simulate three tables of users, cars, and rents (many-to-many relationship of users and cars).\
