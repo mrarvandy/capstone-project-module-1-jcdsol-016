@@ -43,7 +43,7 @@ def getDataFromList(listData, dataTable, method, isRent = False):
     choiceReadDataOptionFlag = True
 
     while (bool(choiceReadDataOptionFlag)):
-        print('\nChoose data:')
+        print('\nChoose data selection type:')
         print("1. Whole")
         print("2. Queried")
         print("3. Back")
