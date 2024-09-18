@@ -224,4 +224,49 @@ cars = [
         'isAvailable': True,
         'isDamaged': False
     },
+    {
+        'car_id': 26,
+        'no_plate': 'DK 3872 QSP',
+        'brand': 'Honda',
+        'type': 'Freed',
+        'daily_fee': 500000,
+        'isAvailable': True,
+        'isDamaged': False
+    },
+    {
+        'car_id': 27,
+        'no_plate': 'DK 6483 PQE',
+        'brand': 'Toyota',
+        'type': 'Alphard',
+        'daily_fee': 1300000,
+        'isAvailable': True,
+        'isDamaged': False
+    },
+    {
+        'car_id': 28,
+        'no_plate': 'DK 2103 SD',
+        'brand': 'Mitsubishi',
+        'type': 'Pajero',
+        'daily_fee': 800000,
+        'isAvailable': True,
+        'isDamaged': False
+    },
+    {
+        'car_id': 29,
+        'no_plate': 'DK 9201 CM',
+        'brand': 'Mitsubishi',
+        'type': 'Pajero',
+        'daily_fee': 800000,
+        'isAvailable': True,
+        'isDamaged': False
+    },
+    {
+        'car_id': 30,
+        'no_plate': 'DK 3941 WE',
+        'brand': 'Toyota',
+        'type': 'Alphard',
+        'daily_fee': 1300000,
+        'isAvailable': True,
+        'isDamaged': False
+    }
 ]

@@ -123,7 +123,7 @@ countries = {
     "Cuba",
     "Curacao",
     "Cyprus",
-    "Czechia.",
+    "Czechia",
     "Denmark",
     "Djibouti",
     "Dominica",
